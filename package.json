@@ -1,0 +1,28 @@
+{
+  "name": "spa-template",
+  "version": "0.0.1",
+  "description": "Basic webapp template using jest, babel and webpack. Used as a starting point for other projects",
+  "homepage": "https://github.com/leighgordy/spa-template#readme",
+  "bugs": {
+    "url": "https://github.com/leighgordy/spa-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leighgordy/spa-template.git"
+  },
+  "license": "MIT",
+  "author": "Leigh G",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "serve": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.6",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
+  }
+}
