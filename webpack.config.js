@@ -6,15 +6,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   mode:"development",
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        loader: 'babel-loader',
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.tsx', '.ts', '.json']
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -27,10 +34,10 @@ export default {
         }),
     ],
     devServer: {
-        open: true,
-        static: {
-            directory: path.join(__dirname, "dist"),
-        },
-        compress: true,
+      open: true,
+      static: {
+        directory: path.join(__dirname, "dist"),
+      },
+      compress: true,
     },
 };
