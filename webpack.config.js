@@ -8,6 +8,14 @@ const __dirname = path.dirname(__filename);
 export default {
   entry: "./src/index.js",
   mode:"development",
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
@@ -15,6 +23,7 @@ export default {
   plugins: [
         new HtmlWebpackPlugin({
             template: './assets/index.html',
+            favicon: "./assets/favicon.gif"
         }),
     ],
     devServer: {
