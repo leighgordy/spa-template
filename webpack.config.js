@@ -7,12 +7,12 @@ const __dirname = path.dirname(__filename);
 
 export default {
   entry: "./src/index.ts",
-  mode:"production",
+  mode: "production",
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
       },
       {
         test: /\.css$/i,
@@ -21,23 +21,23 @@ export default {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.tsx', '.ts', '.json']
+    extensions: [".js", ".jsx", ".tsx", ".ts", ".json"],
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
   plugins: [
-        new HtmlWebpackPlugin({
-            template: './assets/index.html',
-            favicon: "./assets/favicon.gif"
-        }),
-    ],
-    devServer: {
-      open: true,
-      static: {
-        directory: path.join(__dirname, "dist"),
-      },
-      compress: true,
+    new HtmlWebpackPlugin({
+      template: "./assets/index.html",
+      favicon: "./assets/favicon.gif",
+    }),
+  ],
+  devServer: {
+    open: true,
+    static: {
+      directory: path.join(__dirname, "dist"),
     },
+    compress: true,
+  },
 };
