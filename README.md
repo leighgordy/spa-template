@@ -2,6 +2,8 @@
 
 Simple single page app template containing: webpack, babel, and jest. Starting point for future apps
 
+**This code is still early doors, I will test it as I use it in other libraries, but right now beware.**
+
 ## instructions
 
 | code               | description                                                                |
