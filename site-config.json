@@ -1,8 +1,0 @@
-{
-  "appName": "My App Name",
-  "shortName": "App",
-  "themeColor": "#317EFB",
-  "backgroundColor": "#ffffff",
-  "publicSiteAddress": "http//localhost:8080",
-  "metaDescription": "This is my awesome web app layout description."
-}
