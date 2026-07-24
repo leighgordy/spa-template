@@ -17,6 +17,7 @@ const generateFavicons = (__dirname, config) => {
         "GenerateFaviconsPlugin",
         (compilation, callback) => {
           const rootDir = compiler.context || __dirname;
+
           const inputSvg = path.resolve(rootDir, "./assets/logo-square.svg");
           const outputDir = path.resolve(rootDir, "./dist");
 
@@ -24,7 +25,6 @@ const generateFavicons = (__dirname, config) => {
             try {
               await fs.mkdir(outputDir, { recursive: true });
 
-              // 1. Generate normal square sizes
               for (const icon of TARGET_ICONS) {
                 await sharp(inputSvg)
                   .resize(icon.size, icon.size)
