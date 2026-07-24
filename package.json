@@ -19,7 +19,7 @@
     "validate": "tsc --noEmit",
     "serve": "webpack serve --mode development",
     "prebuild": "prettier . --check && tsc --noEmit",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "test": "jest"
   },
   "devDependencies": {
