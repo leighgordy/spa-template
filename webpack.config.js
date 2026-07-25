@@ -5,6 +5,7 @@ import CopyPlugin from "copy-webpack-plugin";
 import generateFavicons from "./plugins/generate-favicons.js";
 import injectServiceWorker from "./plugins/inject-service-worker.js";
 import siteConfig from "./assets/site-config.json" with { type: "json" };
+import minifyCSS from "./plugins/minify-css.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,7 +16,7 @@ const getMinifyOptions = (isProd) =>
     removeComments: true,
     removeRedundantAttributes: true,
     useShortDoctype: true,
-    minifyCSS: true,
+    minifyCSS,
     minifyJS: true,
   };
 
@@ -57,16 +58,17 @@ export default (env, argv) => {
         minify: getMinifyOptions(isProd),
       }),
       new HtmlWebpackPlugin({
-        template: "./assets/404.html",
+        template: "./assets/warning.html",
         filename: "404.html",
-        title: `${siteConfig.appName} | Page Not Found `,
-        metaDescription: "Sorry, the page you are looking for does not exist.",
+        title: `${siteConfig.appName} | 404 - Page Not Found`,
+        warningHeader: "404 - Page Not Found",
+        warningMessage: "Sorry, the page you are looking for does not exist.",
+        warningCss: siteConfig.warningCss,
         publicSiteAddress: siteConfig.publicSiteAddress,
         isProduction: isProd,
         minify: getMinifyOptions(isProd),
         inject: false,
       }),
-
       ...(isProd
         ? [
             new CopyPlugin({

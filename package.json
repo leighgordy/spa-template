@@ -36,6 +36,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
+    "lightningcss": "^1.33.0",
     "prettier": "3.9.6",
     "style-loader": "^4.0.0",
     "sharp": "^0.35.3",
@@ -45,7 +46,10 @@
     "webpack-dev-server": "^6.0.0"
   },
   "overrides": {
-    "@babel/core": "^8.0.1"
+    "@babel/core": "^8.0.1",
+    "glob": "^13.0.6",
+    "minimatch": "^10.2.5",
+    "brace-expansion": "^5.0.8"
   },
   "allowScripts": {
     "unrs-resolver@1.12.2": true,

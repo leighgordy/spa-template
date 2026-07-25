@@ -4,5 +4,19 @@
   "themeColor": "#317EFB",
   "backgroundColor": "#ffffff",
   "publicSiteAddress": "http//localhost:8080",
-  "metaDescription": "This is a SPA template originally build by Code Donkey UK."
+  "metaDescription": "This is a SPA template originally build by Code Donkey UK.",
+  "warningCss": {
+    "light": {
+      "backgroundColor": "#FFFFFF",
+      "textColor": "#000000",
+      "cardColor": "#FFFFFF",
+      "borderColor": "#d4d4d8"
+    },
+    "dark": {
+      "backgroundColor": "#000000",
+      "textColor": "#FFFFFF",
+      "cardColor": "#000000",
+      "borderColor": "#9ca3af"
+    }
+  }
 }
