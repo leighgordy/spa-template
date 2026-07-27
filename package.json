@@ -1,58 +1,60 @@
 {
   "name": "spa-template",
   "version": "0.0.1",
-  "description": "Basic webapp template using jest, babel and webpack. Used as a starting point for other projects",
-  "homepage": "https://github.com/leighgordy/spa-template#readme",
+  "description": "A basic JavaScript SPA template project.",
+  "homepage": "https://github.com/codedonkeyuk/spa-template#readme",
   "bugs": {
-    "url": "https://github.com/leighgordy/spa-template/issues"
+    "url": "https://github.com/codedonkeyuk/spa-templateissues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leighgordy/spa-template.git"
+    "url": "git+https://github.comcodedonkeyuk/spa-template.git"
   },
   "license": "MIT",
-  "author": "Leigh G",
+  "author": "Leigh",
   "type": "module",
   "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "clean": "prettier . --write",
-    "validate": "tsc --noEmit",
-    "serve": "webpack serve --mode development",
+    "validate": "prettier . --check && tsc --noEmit && npx cspell README.md",
+    "dev": "vite",
+    "serveDev": "vite --open",
+    "serveProd": "vite preview --open",
     "prebuild": "prettier . --check && tsc --noEmit",
-    "build": "webpack --mode production",
-    "test": "jest"
+    "build": "vite build",
+    "test": "vitest run",
+    "test:debug": "vitest --inspect-brk --no-file-parallelism run",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@babel/core": "^8.0.1",
-    "@babel/plugin-transform-runtime": "^8.0.1",
-    "@babel/preset-env": "^8.0.2",
-    "@babel/preset-typescript": "^8.0.1",
-    "@testing-library/jest-dom": "^7.0.0",
-    "@types/jest": "^30.0.0",
-    "babel-loader": "^10.1.1",
-    "copy-webpack-plugin": "^14.0.0",
-    "css-loader": "^7.1.4",
-    "html-webpack-plugin": "^5.6.7",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^30.4.2",
-    "jest-environment-jsdom": "^30.4.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@vite-pwa/assets-generator": "^1.0.2",
+    "canvas": "^3.2.3",
+    "cspell": "^10.0.1",
+    "husky": "^9.1.7",
+    "jsdom": "^29.1.1",
     "lightningcss": "^1.33.0",
     "prettier": "3.9.6",
-    "style-loader": "^4.0.0",
-    "sharp": "^0.35.3",
     "typescript": "^7.0.2",
-    "webpack": "^5.108.4",
-    "webpack-cli": "^7.2.1",
-    "webpack-dev-server": "^6.0.0"
+    "vite": "^8.1.5",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-pwa": "^1.3.0",
+    "vitest": "^4.1.10"
   },
   "overrides": {
-    "@babel/core": "^8.0.1",
     "glob": "^13.0.6",
     "minimatch": "^10.2.5",
-    "brace-expansion": "^5.0.8"
+    "brace-expansion": "^5.0.8",
+    "sharp": "^0.35.3"
   },
   "allowScripts": {
     "unrs-resolver@1.12.2": true,
-    "fsevents@2.3.3": true
+    "fsevents@2.3.3": true,
+    "sharp@0.33.5": true,
+    "canvas@3.2.3": true
   }
 }
