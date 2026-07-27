@@ -1,5 +1,3 @@
-import "./main.css";
-
 const root = document.getElementById("root");
 
 if (root) {
